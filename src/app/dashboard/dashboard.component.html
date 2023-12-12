@@ -1,1 +1,36 @@
-<p>dashboard works!</p>
+
+<button (click)="callapi()">Getdata for Dashboard</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Dashboard</title>
+ 
+</head>
+<body>
+    <div class="container" >
+        <div class="card" *ngFor="let ob of res">
+            <!-- <img src={{ob.photoUrl}} alt="Recipe Image" > -->
+            <img *ngIf="ob.photoUrl !== ''" src="{{ob.photoUrl}}" alt="Recipe Image">
+            <img *ngIf="ob.photoUrl === ''" src="https://plantoeat.s3.amazonaws.com/recipes/16855806/5ed61d04411aa19e0829543b2d7f750159c2fd22-original.jpg" alt="Static Image">
+            <div class="card-content">
+                <h2>{{ob.title}}</h2>
+                <p class="scrolls">{{ob.description}}</p>
+            </div>
+        </div>
+
+        <!-- <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Recipe Image">
+            <div class="card-content">
+                <h2>Yummy Recipe 2</h2>
+                <p>Description of the recipe goes here. It can be a brief overview of the dish.</p>
+            </div>
+        </div> -->
+
+        <!-- Add more cards as needed -->
+
+    </div>
+
+</body>
+</html>
